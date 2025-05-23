@@ -4,17 +4,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.juancamr.deckly.data.model.CardModel
-import com.juancamr.deckly.data.model.CardProvider
 import com.juancamr.deckly.domain.GetCardsUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CardViewModel: ViewModel() {
+@HiltViewModel
+class CardViewModel @Inject constructor(
+    private val getCardsUseCase: GetCardsUseCase
+) : ViewModel() {
 
     val cardModel = MutableLiveData<CardModel>()
     val isLoading = MutableLiveData<Boolean>()
-
-    // casos de uso
-    var getCardsUseCase = GetCardsUseCase()
 
     fun onCreate() {
         viewModelScope.launch {
@@ -26,12 +27,5 @@ class CardViewModel: ViewModel() {
                 isLoading.postValue(false)
             }
         }
-    }
-
-    // funcion para obtener un card aleatorio
-    fun random() {
-        val randomCardIndex = (CardProvider.cards.indices).random()
-        val card = CardProvider.cards[randomCardIndex]
-        cardModel.postValue(card)
     }
 }

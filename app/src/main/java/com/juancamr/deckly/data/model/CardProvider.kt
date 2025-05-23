@@ -1,5 +1,9 @@
 package com.juancamr.deckly.data.model
 
-object CardProvider {
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class CardProvider @Inject constructor() {
     var cards: List<CardModel> = emptyList()
 }

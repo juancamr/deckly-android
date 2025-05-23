@@ -8,7 +8,9 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.juancamr.deckly.databinding.ActivityMainBinding
 import com.juancamr.deckly.presentation.viewmodel.CardViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -28,9 +30,5 @@ class MainActivity : AppCompatActivity() {
         cardViewModel.isLoading.observe(this, Observer {
             binding.progress.isVisible = it
         })
-
-        binding.tvCardFront.setOnClickListener {
-            cardViewModel.random()
-        }
     }
 }
