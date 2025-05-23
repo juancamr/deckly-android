@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.hilt)
+    alias(libs.plugins.google.ksp)
 }
 
 android {
@@ -18,7 +20,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BACKEND_BASE_URL", "\"http://10.0.2.2:8000/\"")
+        }
         release {
+            buildConfigField("String", "BACKEND_BASE_URL", "\"http://127.0.0.1:8000/\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -27,14 +33,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "11"
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -47,6 +54,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // mis dependencias ------------------------------
     // dependencias mvvm
     implementation(libs.androidx.activity)
     implementation(libs.androidx.fragment)
@@ -54,8 +62,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.kotlinx.coroutines)
 
-    // mis dependencias
-    // siguiendo las instrucciones de google https://developer.android.com/build/dependencies
+    // siguiendo las instrucciones https://developer.android.com/build/dependencies
     implementation(libs.retrofit)
     implementation(libs.gson.converter)
+    implementation(libs.google.hilt)
+    ksp(libs.google.hilt.compiler)
 }
