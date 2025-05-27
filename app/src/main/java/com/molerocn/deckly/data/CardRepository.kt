@@ -1,8 +1,8 @@
-package com.juancamr.deckly.data
+package com.molerocn.deckly.data
 
-import com.juancamr.deckly.data.model.CardModel
-import com.juancamr.deckly.data.model.CardProvider
-import com.juancamr.deckly.data.network.CardService
+import com.molerocn.deckly.data.model.CardModel
+import com.molerocn.deckly.data.model.CardProvider
+import com.molerocn.deckly.data.network.CardService
 import javax.inject.Inject
 
 class CardRepository @Inject constructor(private val api: CardService, private val cardProvider: CardProvider) {

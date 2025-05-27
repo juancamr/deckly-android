@@ -13,12 +13,15 @@ fragment = "1.8.7"
 androidx-lifecycle = "2.9.0"
 kotlinx-coroutines = "1.10.2"
 room = "2.7.1"
+firebase-bom = "33.14.0"
+androidx-credentials = "1.6.0-alpha02"
 
 # plugins
 agp = "8.9.3"
 kotlin = "2.0.21"
 hilt = "2.56.2"
 ksp = "2.1.21-2.0.1"
+google-services = "4.4.2"
 
 [libraries] # -------------------------------------------------------------------------------------------------
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -46,6 +49,11 @@ google-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compi
 androidx-room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 
+# auth
+androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "androidx-credentials" }
+androidx-credentials-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "androidx-credentials" }
+android-libraries-identity = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "androidx-credentials" }
+
 [plugins] # ------------------------------------------------------------------------------------------------------------
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -53,3 +61,6 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 # dagger hilt
 google-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# auth
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }

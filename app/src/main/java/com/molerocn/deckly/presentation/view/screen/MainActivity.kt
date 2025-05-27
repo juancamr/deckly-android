@@ -1,4 +1,4 @@
-package com.juancamr.deckly.presentation.view.screen
+package com.molerocn.deckly.presentation.view.screen
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,8 +6,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
-import com.juancamr.deckly.databinding.ActivityMainBinding
-import com.juancamr.deckly.presentation.viewmodel.CardViewModel
+import com.molerocn.deckly.databinding.ActivityMainBinding
+import com.molerocn.deckly.presentation.viewmodel.CardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -3,14 +3,15 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.hilt)
     alias(libs.plugins.google.ksp)
+    alias(libs.plugins.google.services)
 }
 
 android {
-    namespace = "com.juancamr.deckly"
+    namespace = "com.molerocn.deckly"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.juancamr.deckly"
+        applicationId = "com.molerocn.deckly"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -55,6 +56,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // mis dependencias ------------------------------
+    // siguiendo las instrucciones https://developer.android.com/build/dependencies
+
     // dependencias mvvm
     implementation(libs.androidx.activity)
     implementation(libs.androidx.fragment)
@@ -62,11 +65,22 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.kotlinx.coroutines)
 
-    // siguiendo las instrucciones https://developer.android.com/build/dependencies
     implementation(libs.retrofit)
     implementation(libs.gson.converter)
     implementation(libs.google.hilt)
     ksp(libs.google.hilt.compiler)
     implementation(libs.androidx.room)
     ksp(libs.androidx.room.compiler)
+
+    // authenticacion
+    // implementation(platform(libs.firebase.bom))
+    // implementation(libs.firebase.auth)
+    // implementation(libs.play.services.auth)
+
+    // setup google sign siguiendo la guia https://developer.android.com/identity/sign-in/credential-manager-siwg
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.auth)
+    implementation(libs.android.libraries.identity)
+
+    // implementation(libs.firebase.analytics) huh? si nadie usara la app xd
 }

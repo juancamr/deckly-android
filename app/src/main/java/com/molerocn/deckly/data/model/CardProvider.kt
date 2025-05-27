@@ -1,4 +1,4 @@
-package com.juancamr.deckly.data.model
+package com.molerocn.deckly.data.model
 
 import javax.inject.Inject
 import javax.inject.Singleton

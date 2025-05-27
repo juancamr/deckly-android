@@ -1,7 +1,7 @@
-package com.juancamr.deckly.di
+package com.molerocn.deckly.di
 
-import com.juancamr.deckly.BuildConfig
-import com.juancamr.deckly.data.network.CardApiClient
+import com.molerocn.deckly.BuildConfig
+import com.molerocn.deckly.data.network.CardApiClient
 import retrofit2.converter.gson.GsonConverterFactory
 import dagger.Module
 import dagger.Provides

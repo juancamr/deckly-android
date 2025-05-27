@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "275430886243",
+    "project_id": "deckly-a74a2",
+    "storage_bucket": "deckly-a74a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275430886243:android:1d938152f2fb420d516156",
+        "android_client_info": {
+          "package_name": "com.molerocn.deckly"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeB_rEzggbTxslC_CfohnX83-AAej-JMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

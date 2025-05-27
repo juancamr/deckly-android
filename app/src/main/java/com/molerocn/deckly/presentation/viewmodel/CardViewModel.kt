@@ -1,10 +1,10 @@
-package com.juancamr.deckly.presentation.viewmodel
+package com.molerocn.deckly.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.juancamr.deckly.data.model.CardModel
-import com.juancamr.deckly.domain.GetCardsUseCase
+import com.molerocn.deckly.data.model.CardModel
+import com.molerocn.deckly.domain.GetCardsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

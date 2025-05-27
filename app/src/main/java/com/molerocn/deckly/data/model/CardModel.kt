@@ -1,4 +1,4 @@
-package com.juancamr.deckly.data.model
+package com.molerocn.deckly.data.model
 
 import com.google.gson.annotations.SerializedName
 

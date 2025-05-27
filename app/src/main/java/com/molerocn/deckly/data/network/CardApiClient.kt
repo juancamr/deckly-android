@@ -1,6 +1,6 @@
-package com.juancamr.deckly.data.network
+package com.molerocn.deckly.data.network
 
-import com.juancamr.deckly.data.model.CardModel
+import com.molerocn.deckly.data.model.CardModel
 import retrofit2.Response
 import retrofit2.http.GET
 

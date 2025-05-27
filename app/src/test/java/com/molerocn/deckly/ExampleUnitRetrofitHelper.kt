@@ -1,4 +1,4 @@
-package com.juancamr.deckly
+package com.molerocn.deckly
 
 import org.junit.Test
 
