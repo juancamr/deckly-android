@@ -67,4 +67,6 @@ dependencies {
     implementation(libs.gson.converter)
     implementation(libs.google.hilt)
     ksp(libs.google.hilt.compiler)
+    implementation(libs.androidx.room)
+    ksp(libs.androidx.room.compiler)
 }
