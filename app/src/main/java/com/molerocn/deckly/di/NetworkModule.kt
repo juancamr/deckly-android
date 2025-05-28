@@ -2,6 +2,7 @@ package com.molerocn.deckly.di
 
 import com.molerocn.deckly.BuildConfig
 import com.molerocn.deckly.data.network.CardApiClient
+import com.molerocn.deckly.data.network.UserApiClient
 import retrofit2.converter.gson.GsonConverterFactory
 import dagger.Module
 import dagger.Provides
@@ -28,5 +29,12 @@ object NetworkModule {
     @Provides
     fun provideCardApiClient(retrofit: Retrofit): CardApiClient {
         return retrofit.create(CardApiClient::class.java)
+    }
+
+
+    @Singleton
+    @Provides
+    fun provideUserApiClient(retrofit: Retrofit): UserApiClient {
+        return retrofit.create(UserApiClient::class.java)
     }
 }

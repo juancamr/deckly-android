@@ -10,6 +10,7 @@ class CardRepository @Inject constructor(
 
     suspend fun getAllCards(): List<CardModel> {
         val response = api.getCards()
+        // guardarlo usando room
         return response
     }
 }

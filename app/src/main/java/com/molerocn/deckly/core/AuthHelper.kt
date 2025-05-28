@@ -8,7 +8,6 @@ import androidx.credentials.GetCredentialRequest
 import androidx.credentials.exceptions.GetCredentialException
 import androidx.credentials.exceptions.NoCredentialException
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
-import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -17,7 +16,9 @@ class AuthHelper @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
 
-    suspend fun signInWithGoogle(): String {
+    suspend fun getTokenFromGoogle(): String {
+        // todo: implementar una clase que pueda almacenar un objeto y tambien un boolean,
+        // todo: algo parecido al Response de java que hiciste en anteriores proyectos de java como freelancer-server
 
         try {
             val credentialManager = CredentialManager.create(context)
@@ -37,5 +38,8 @@ class AuthHelper @Inject constructor(
             Log.e("signin", "Error desconocido: ${e.message}", e)
         }
         return ""
+    }
+
+    suspend fun signOut() {
     }
 }

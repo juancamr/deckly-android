@@ -5,9 +5,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class CardService @Inject constructor(private val api: CardApiClient) {
+class CardService @Inject constructor(
+    private val api: CardApiClient
+) {
 
     suspend fun getCards(): List<CardModel> {
+
+        // todo averiguar que carajos hacer withContext
         return withContext(Dispatchers.IO) {
             val response = api.getAllCards()
             response.body() ?: emptyList()

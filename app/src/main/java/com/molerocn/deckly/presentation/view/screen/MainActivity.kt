@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.credentials.CredentialManager
 import com.molerocn.deckly.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.molerocn.deckly.presentation.viewmodel.SignInViewModel
@@ -37,5 +36,3 @@ class MainActivity : AppCompatActivity() {
 // cardViewModel.isLoading.observe(this, Observer {
 //     binding.progress.isVisible = it
 // })
-
-// credentialManager.clearCredentialState(ClearCredentialStateRequest()) para cerrar sesion
