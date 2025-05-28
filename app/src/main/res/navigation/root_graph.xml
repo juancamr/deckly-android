@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.molerocn.deckly.presentation.view.screen.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_auth_graph"
+            app:destination="@id/auth_graph" />
+        <action
+            android:id="@+id/action_splashFragment_to_main_graph"
+            app:destination="@id/main_graph" />
+    </fragment>
+
+
+    <include app:graph="@navigation/auth_graph" />
+    <include app:graph="@navigation/main_graph" />
+
+    <action
+        android:id="@+id/action_global_auth_to_main"
+        app:destination="@id/main_graph"
+        app:popUpTo="@id/splash_graph"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_main_to_auth"
+        app:destination="@id/auth_graph"
+        app:popUpTo="@id/splash_graph"
+        app:popUpToInclusive="true" />
+
+</navigation>
