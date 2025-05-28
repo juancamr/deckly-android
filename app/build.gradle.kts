@@ -1,9 +1,21 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        load(FileInputStream(localPropertiesFile))
+    }
+}
+
+val googleClientId: String = localProperties.getProperty("GOOGLE_CLIENT_ID") ?: ""
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.google.hilt)
     alias(libs.plugins.google.ksp)
-    alias(libs.plugins.google.services)
+    // alias(libs.plugins.google.services)
 }
 
 android {
@@ -23,6 +35,7 @@ android {
     buildTypes {
         debug {
             buildConfigField("String", "BACKEND_BASE_URL", "\"http://10.0.2.2:8000/\"")
+            buildConfigField("String", "GOOGLE_CLIENT_ID", "\"$googleClientId\"")
         }
         release {
             buildConfigField("String", "BACKEND_BASE_URL", "\"http://127.0.0.1:8000/\"")
@@ -46,17 +59,16 @@ android {
     }
 }
 
-dependencies {
+dependencies { // siguiendo las instrucciones https://developer.android.com/build/dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.googleid)
+    implementation(libs.androidx.media3.common.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // mis dependencias ------------------------------
-    // siguiendo las instrucciones https://developer.android.com/build/dependencies
 
     // dependencias mvvm
     implementation(libs.androidx.activity)
@@ -72,15 +84,7 @@ dependencies {
     implementation(libs.androidx.room)
     ksp(libs.androidx.room.compiler)
 
-    // authenticacion
-    // implementation(platform(libs.firebase.bom))
-    // implementation(libs.firebase.auth)
-    // implementation(libs.play.services.auth)
-
     // setup google sign siguiendo la guia https://developer.android.com/identity/sign-in/credential-manager-siwg
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.auth)
-    implementation(libs.android.libraries.identity)
-
-    // implementation(libs.firebase.analytics) huh? si nadie usara la app xd
 }

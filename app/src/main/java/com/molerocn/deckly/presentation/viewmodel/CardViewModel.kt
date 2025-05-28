@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CardViewModel @Inject constructor(
-    private val getCardsUseCase: GetCardsUseCase
+    private val getCardsUseCase:GetCardsUseCase
 ) : ViewModel() {
 
     val cardModel = MutableLiveData<CardModel>()
