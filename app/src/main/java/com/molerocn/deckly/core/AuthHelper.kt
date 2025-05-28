@@ -40,6 +40,9 @@ class AuthHelper @Inject constructor(
         return ""
     }
 
+    fun saveUser() {
+    }
+
     suspend fun signOut() {
     }
 }
