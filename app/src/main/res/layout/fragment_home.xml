@@ -7,9 +7,27 @@
     tools:context=".presentation.view.screen.HomeFragment">
 
     <TextView
+        android:id="@+id/tvNombreUsuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="80dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nombre de usuario"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Hola, Nombre usuario"
         />
+
+    <Button
+        android:id="@+id/btnStudyCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Estudiar" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

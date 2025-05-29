@@ -11,7 +11,7 @@ class CardService @Inject constructor(
 
     suspend fun getCards(): List<CardModel> {
 
-        // todo averiguar que carajos hacer withContext
+        // todo averiguar que carajos hace withContext
         return withContext(Dispatchers.IO) {
             val response = api.getAllCards()
             response.body() ?: emptyList()
