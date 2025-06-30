@@ -13,7 +13,13 @@
         <action
             android:id="@+id/action_homeFragment_to_cardFragment"
             app:destination="@id/cardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profile_graph"
+            app:destination="@id/auth_graph" />
     </fragment>
+
+    <include app:graph="@navigation/profile_graph" />
+
     <fragment
         android:id="@+id/cardFragment"
         android:name="com.molerocn.deckly.presentation.view.screen.CardFragment"

@@ -7,10 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.molerocn.deckly.R
+import com.molerocn.deckly.core.AuthHelper
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class SplashFragment : Fragment() {
+class SplashFragment @Inject constructor(
+    private val authHelper: AuthHelper
+) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +27,7 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val isLoggedIn = checkUserLoggedIn()
+        val isLoggedIn = authHelper.isLoggedIn()
         val navController = findNavController()
 
         if (isLoggedIn) {
@@ -31,10 +35,6 @@ class SplashFragment : Fragment() {
         } else {
             navController.navigate(R.id.action_splashFragment_to_auth_graph)
         }
-    }
-
-    private fun checkUserLoggedIn(): Boolean {
-        return false
     }
 
 }

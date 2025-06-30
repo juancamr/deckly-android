@@ -1,24 +1,34 @@
 package com.molerocn.deckly.core
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.credentials.CredentialManager
 import androidx.credentials.CustomCredential
 import android.util.Log
 import androidx.credentials.GetCredentialRequest
 import androidx.credentials.exceptions.GetCredentialException
 import androidx.credentials.exceptions.NoCredentialException
+import androidx.navigation.NavController
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
+import com.molerocn.deckly.R
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 class AuthHelper @Inject constructor(
     private val request: GetCredentialRequest,
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context,
+    private val userPreferences: SharedPreferences
 ) {
 
+    /**
+     * Este metodo abre el modal de inicio de sesion de google y retorna el token luego de
+     * autenticarse
+     *
+     * @return token con los datos del usuario cifrados
+     */
     suspend fun getTokenFromGoogle(): String {
-        // todo: implementar una clase que pueda almacenar un objeto y tambien un boolean,
-        // todo: algo parecido al Response de java que hiciste en anteriores proyectos de java como freelancer-server
+        // TODO: implementar una clase que pueda almacenar un objeto y tambien un boolean,
+        // TODO: algo parecido al Response de java que hiciste en anteriores proyectos de java como freelancer-server
 
         try {
             val credentialManager = CredentialManager.create(context)
@@ -40,6 +50,22 @@ class AuthHelper @Inject constructor(
         return ""
     }
 
-    suspend fun signOut() {
+    fun isLoggedIn(): Boolean {
+        return userPreferences.getString("name", "")!!.isNotEmpty()
+    }
+
+    fun signIn(content: Map<String, String>) {
+        val editor = userPreferences.edit()
+        editor.putString("name", content.get("name"))
+        editor.putString("email", content.get("email"))
+        editor.putString("picture", content.get("picture"))
+        editor.apply()
+    }
+
+    fun signOut(navController: NavController) {
+        val editor = userPreferences.edit()
+        editor.clear()
+        editor.apply()
+        navController.navigate(R.id.action_global_profile_to_auth)
     }
 }

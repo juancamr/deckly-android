@@ -29,7 +29,7 @@
         app:popUpToInclusive="true" />
 
     <action
-        android:id="@+id/action_global_main_to_auth"
+        android:id="@+id/action_global_profile_to_auth"
         app:destination="@id/auth_graph"
         app:popUpTo="@id/splash_graph"
         app:popUpToInclusive="true" />

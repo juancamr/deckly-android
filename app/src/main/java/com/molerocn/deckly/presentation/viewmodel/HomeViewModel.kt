@@ -1,16 +1,17 @@
 package com.molerocn.deckly.presentation.viewmodel
 
+import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.molerocn.deckly.data.repository.UserProvider
 import com.molerocn.deckly.domain.SendWelcomeNotificationUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val sendWelcomeNotificationUseCase: SendWelcomeNotificationUseCase
+    private val sendWelcomeNotificationUseCase: SendWelcomeNotificationUseCase,
+    private val sharedPreferences: SharedPreferences
 ) : ViewModel() {
 
     val nombre = MutableLiveData<String>()
@@ -18,7 +19,7 @@ class HomeViewModel @Inject constructor(
 
     fun onCreate() {
         Log.i("home", "on create")
-        val sub = UserProvider.userSub
+        val sub = sharedPreferences.getString("nombre", "")
         nombre.postValue(sub)
         sendWelcomeNotificationUseCase(sub!!)
     }
