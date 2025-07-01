@@ -24,6 +24,11 @@ object NetworkModule {
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun provideUserApiClient(retrofit: Retrofit): UserApiClient {
+        return retrofit.create(UserApiClient::class.java)
+    }
 
     @Singleton
     @Provides
@@ -31,10 +36,4 @@ object NetworkModule {
         return retrofit.create(CardApiClient::class.java)
     }
 
-
-    @Singleton
-    @Provides
-    fun provideUserApiClient(retrofit: Retrofit): UserApiClient {
-        return retrofit.create(UserApiClient::class.java)
-    }
 }

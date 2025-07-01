@@ -1,9 +1,9 @@
 package com.molerocn.deckly.data.repository
 
 import com.molerocn.deckly.core.AuthHelper
-import com.molerocn.deckly.domain.model.UserModel
-import com.molerocn.deckly.data.model.toDomainModel
+import com.molerocn.deckly.domain.model.User
 import com.molerocn.deckly.data.network.UserService
+import com.molerocn.deckly.domain.model.toDomainModel
 import jakarta.inject.Inject
 
 class UserRepository @Inject constructor(
@@ -11,7 +11,7 @@ class UserRepository @Inject constructor(
     private val authHelper: AuthHelper
 ) {
 
-    suspend fun signInWithGoogle(token: String): UserModel? {
+    suspend fun signInWithGoogle(token: String): User? {
         val response = api.signInWithGoogle(token)
         response?.let {
             authHelper.signIn(mapOf(
@@ -21,6 +21,6 @@ class UserRepository @Inject constructor(
                 "access_token" to it.accessToken
             ))
         }
-        return response?.toDomainModel()
+        return response?.toDomainModel() 
     }
 }

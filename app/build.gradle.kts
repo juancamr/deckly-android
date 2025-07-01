@@ -84,6 +84,7 @@ dependencies { // siguiendo las instrucciones https://developer.android.com/buil
 
     // room
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
     // setup google sign siguiendo la guia https://developer.android.com/identity/sign-in/credential-manager-siwg
