@@ -9,21 +9,23 @@
         android:id="@+id/homeFragment"
         android:name="com.molerocn.deckly.presentation.view.screen.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_cardFragment"
             app:destination="@id/cardFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_profile_graph"
-            app:destination="@id/auth_graph" />
     </fragment>
-
-    <include app:graph="@navigation/profile_graph" />
 
     <fragment
         android:id="@+id/cardFragment"
         android:name="com.molerocn.deckly.presentation.view.screen.CardFragment"
         android:label="fragment_card"
         tools:layout="@layout/fragment_card" />
+
+    <include app:graph="@navigation/profile_graph" />
+
+    <action
+        android:id="@+id/action_main_to_profile"
+        app:destination="@id/profile_graph" />
+
 
 </navigation>

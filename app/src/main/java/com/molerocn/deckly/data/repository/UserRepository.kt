@@ -17,7 +17,8 @@ class UserRepository @Inject constructor(
             authHelper.signIn(mapOf(
                 "name" to it.name.substringBefore(" "),
                 "email" to it.email,
-                "picture" to it.picture
+                "picture" to it.picture,
+                "access_token" to it.accessToken
             ))
         }
         return response?.toDomainModel()

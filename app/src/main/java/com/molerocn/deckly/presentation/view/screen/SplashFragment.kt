@@ -12,9 +12,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SplashFragment @Inject constructor(
-    private val authHelper: AuthHelper
-) : Fragment() {
+class SplashFragment : Fragment() {
+
+    @Inject lateinit var authHelper: AuthHelper
 
     override fun onCreateView(
         inflater: LayoutInflater,

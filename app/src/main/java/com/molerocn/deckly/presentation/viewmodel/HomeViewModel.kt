@@ -10,18 +10,18 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val sendWelcomeNotificationUseCase: SendWelcomeNotificationUseCase,
-    private val sharedPreferences: SharedPreferences
+    // private val sendWelcomeNotificationUseCase: SendWelcomeNotificationUseCase,
+    private val userPreferences: SharedPreferences
 ) : ViewModel() {
 
     val nombre = MutableLiveData<String>()
     val goStudyEvent = MutableLiveData<Boolean>()
 
     fun onCreate() {
-        Log.i("home", "on create")
-        val sub = sharedPreferences.getString("nombre", "")
+        val sub = userPreferences.getString("nombre", "")
+        // Log.i("user token", userPreferences.getString("access_token", "")!!)
         nombre.postValue(sub)
-        sendWelcomeNotificationUseCase(sub!!)
+        // sendWelcomeNotificationUseCase(sub!!)
     }
 
     fun goStudyCard() {

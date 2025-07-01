@@ -50,15 +50,14 @@ class AuthHelper @Inject constructor(
         return ""
     }
 
-    fun isLoggedIn(): Boolean {
-        return userPreferences.getString("name", "")!!.isNotEmpty()
-    }
+    fun isLoggedIn() = userPreferences.getString("access_token", "")!!.isNotEmpty()
 
     fun signIn(content: Map<String, String>) {
         val editor = userPreferences.edit()
         editor.putString("name", content.get("name"))
         editor.putString("email", content.get("email"))
         editor.putString("picture", content.get("picture"))
+        editor.putString("access_token", content.get("access_token"))
         editor.apply()
     }
 
