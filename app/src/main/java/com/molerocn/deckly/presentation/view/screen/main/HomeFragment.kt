@@ -1,4 +1,4 @@
-package com.molerocn.deckly.presentation.view.screen
+package com.molerocn.deckly.presentation.view.screen.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

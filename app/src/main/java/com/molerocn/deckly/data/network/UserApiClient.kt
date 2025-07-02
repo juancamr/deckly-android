@@ -1,6 +1,6 @@
 package com.molerocn.deckly.data.network
 
-import com.molerocn.deckly.data.model.UserModel
+import com.molerocn.deckly.data.network.model.UserModelApi
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -8,5 +8,5 @@ import retrofit2.http.POST
 interface UserApiClient {
     
     @POST("/auth/google")
-    suspend fun signInWithGoogle(@Body body: Map<String, String>): Response<UserModel>
+    suspend fun signInWithGoogle(@Body body: Map<String, String>): Response<UserModelApi>
 }

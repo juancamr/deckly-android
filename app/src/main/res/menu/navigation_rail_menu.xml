@@ -1,22 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
   <item
-      android:id="@+id/alarms"
+      android:id="@+id/home"
       android:enabled="true"
       android:icon="@drawable/google_icon"
-      android:title="hola"/>
+      android:title="Home"/>
   <item
-      android:id="@+id/schedule"
+      android:id="@+id/buscar"
       android:enabled="true"
       android:icon="@drawable/google_icon"
-      android:title="hola"/>
+      android:title="Buscar"/>
   <item
-      android:id="@+id/timer"
+      android:id="@+id/lobby"
       android:enabled="true"
       android:icon="@drawable/google_icon"
-      android:title="hola"/>
-  <item
-      android:id="@+id/stopwatch"
-      android:enabled="true"
-      android:icon="@drawable/google_icon"
-      android:title="hola"/>
+      android:title="lobby"/>
 </menu>

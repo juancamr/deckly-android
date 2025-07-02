@@ -6,8 +6,8 @@ import javax.inject.Inject
 
 class GetCardsUseCase @Inject constructor(private val repository: CardRepository) {
 
-    suspend operator fun invoke(): List<Card> {
-        // TODO: obtener cards desde la base de datos del backend
-        return repository.getAllCardsFromDatabase()
+    // TODO: agregar logica para decidir si obtener los datos desde api o local database
+    suspend operator fun invoke(deckId: Int): List<Card> {
+        return repository.getCardsByDeckFromDatabase(deckId)
     }
 }

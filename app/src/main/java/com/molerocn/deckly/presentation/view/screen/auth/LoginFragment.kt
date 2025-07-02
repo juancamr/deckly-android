@@ -1,4 +1,4 @@
-package com.molerocn.deckly.presentation.view.screen
+package com.molerocn.deckly.presentation.view.screen.auth
 
 import android.os.Build
 import android.os.Bundle

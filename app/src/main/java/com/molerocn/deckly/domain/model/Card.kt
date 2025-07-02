@@ -1,14 +1,14 @@
 package com.molerocn.deckly.domain.model
 
 import com.molerocn.deckly.data.database.entities.CardEntity
-import com.molerocn.deckly.data.model.CardModel
+import com.molerocn.deckly.data.network.model.CardModelApi
 
 data class Card(
     val back: String,
     val front: String
 )
 
-fun CardModel.toDomainModel() = Card(
+fun CardModelApi.toDomainModel() = Card(
     back = back,
     front = front
 )

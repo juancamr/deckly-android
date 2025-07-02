@@ -32,7 +32,7 @@ class AuthHelper @Inject constructor(
 
         try {
             val credentialManager = CredentialManager.create(context)
-            val result = credentialManager.getCredential(context, request)
+            val result = credentialManager.getCredential(context, request) // obtener el token lanzando un modal (supongo)
             val credential = result.credential
             if (credential is CustomCredential && credential.type == GoogleIdTokenCredential.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL) {
                 val googleIdTokenCredential = GoogleIdTokenCredential.createFrom(credential.data)

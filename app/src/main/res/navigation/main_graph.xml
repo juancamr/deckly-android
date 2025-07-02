@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.molerocn.deckly.presentation.view.screen.HomeFragment"
+        android:name="com.molerocn.deckly.presentation.view.screen.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/cardFragment"
-        android:name="com.molerocn.deckly.presentation.view.screen.CardFragment"
+        android:name="com.molerocn.deckly.presentation.view.screen.main.CardFragment"
         android:label="fragment_card"
         tools:layout="@layout/fragment_card" />
 

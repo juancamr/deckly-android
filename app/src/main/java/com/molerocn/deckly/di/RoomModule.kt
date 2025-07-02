@@ -24,4 +24,8 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideCardDao(db: MainDatabase) = db.getCardDao()
+
+    @Singleton
+    @Provides
+    fun provideDeckDao(db: MainDatabase) = db.getDeckDao()
 }

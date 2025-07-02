@@ -11,13 +11,14 @@ class CardRepository @Inject constructor(
     private val cardDao: CardDao
 ) {
 
-    suspend fun getAllCardsFromApi(): List<Card> {
+    suspend fun getCardsByDeckFromApi(): List<Card> {
+        // TODO: agregar logica para filtrar mediante el id de deck
         val response = api.getCards()
         return response.map { it.toDomainModel() }
     }
 
-    suspend fun getAllCardsFromDatabase(): List<Card> {
-        val response = cardDao.getCards()
+    suspend fun getCardsByDeckFromDatabase(deckId: Int): List<Card> {
+        val response = cardDao.getCardsByDeck(deckId)
         return response.map { it.toDomainModel() }
     }
 

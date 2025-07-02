@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.screen.HomeFragment">
+    tools:context=".presentation.view.screen.main.HomeFragment">
 
-    <com.google.android.material.navigationrail.NavigationRailView
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/navigation_rail"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/navigation_rail_menu" />
 
     <TextView

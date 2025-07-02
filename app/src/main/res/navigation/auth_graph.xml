@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.molerocn.deckly.presentation.view.screen.LoginFragment"
+        android:name="com.molerocn.deckly.presentation.view.screen.auth.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
 

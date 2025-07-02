@@ -87,6 +87,10 @@ dependencies { // siguiendo las instrucciones https://developer.android.com/buil
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
+    // datastore
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.androidx.datastore.proto)
+
     // setup google sign siguiendo la guia https://developer.android.com/identity/sign-in/credential-manager-siwg
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.auth)
