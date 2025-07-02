@@ -32,14 +32,6 @@ class CardFragment : Fragment() {
 
         //val url = "https://www.oxfordlearnersdictionaries.com/us/media/english/uk_pron/k/kno/knowl/knowledge__gb_3.mp3"
         val url = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-
-        binding.btnPlay.setOnClickListener {
-            cardViewModel.play(url)
-        }
-        binding.btnPause.setOnClickListener {
-            cardViewModel.stop()
-        }
-        binding.tvCardFront.text = "knowledge"
     }
 
     override fun onDestroyView() {

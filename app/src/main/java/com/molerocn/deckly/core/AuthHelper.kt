@@ -65,6 +65,6 @@ class AuthHelper @Inject constructor(
         val editor = userPreferences.edit()
         editor.clear()
         editor.apply()
-        navController.navigate(R.id.action_global_profile_to_auth)
+        // navController.navigate(R.id.action_global_profile_to_auth)
     }
 }

@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_graph"
+    android:id="@+id/home_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
@@ -15,17 +15,11 @@
             app:destination="@id/cardFragment" />
     </fragment>
 
+
     <fragment
         android:id="@+id/cardFragment"
         android:name="com.molerocn.deckly.presentation.view.screen.main.CardFragment"
         android:label="fragment_card"
         tools:layout="@layout/fragment_card" />
-
-    <include app:graph="@navigation/profile_graph" />
-
-    <action
-        android:id="@+id/action_main_to_profile"
-        app:destination="@id/profile_graph" />
-
 
 </navigation>

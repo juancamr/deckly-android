@@ -6,19 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".presentation.view.screen.main.HomeFragment">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/navigation_rail_menu" />
-
     <TextView
         android:id="@+id/tvNombreUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="80dp"
-        android:text="Hola, Nombre usuario"
+        android:text="Hola, Nombre usuario xd"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

@@ -18,7 +18,7 @@ class HomeViewModel @Inject constructor(
     val goStudyEvent = MutableLiveData<Boolean>()
 
     fun onCreate() {
-        val sub = userPreferences.getString("nombre", "")
+        val sub = userPreferences.getString("name", "")
         // Log.i("user token", userPreferences.getString("access_token", "")!!)
         nombre.postValue(sub)
         // sendWelcomeNotificationUseCase(sub!!)

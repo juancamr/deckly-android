@@ -2,8 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/splash_graph"
+    android:id="@+id/root_graph"
     app:startDestination="@id/splashFragment">
+
+    <include app:graph="@navigation/auth_graph" />
+
+    <fragment
+        android:id="@+id/layoutFragment"
+        android:name="com.molerocn.deckly.presentation.view.screen.main.LayoutFragment"
+        android:label="fragment_layout"
+        tools:layout="@layout/fragment_layout" />
 
     <fragment
         android:id="@+id/splashFragment"
@@ -15,23 +23,15 @@
             app:destination="@id/auth_graph" />
         <action
             android:id="@+id/action_splashFragment_to_main_graph"
-            app:destination="@id/main_graph" />
+            app:destination="@id/layoutFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+
     </fragment>
-
-
-    <include app:graph="@navigation/auth_graph" />
-    <include app:graph="@navigation/main_graph" />
 
     <action
         android:id="@+id/action_global_auth_to_main"
-        app:destination="@id/main_graph"
-        app:popUpTo="@id/splash_graph"
-        app:popUpToInclusive="true" />
-
-    <action
-        android:id="@+id/action_global_profile_to_auth"
-        app:destination="@id/auth_graph"
-        app:popUpTo="@id/splash_graph"
+        app:destination="@id/layoutFragment"
         app:popUpToInclusive="true" />
 
 </navigation>
