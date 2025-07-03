@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.molerocn.deckly.domain.model.Card
 
 @Entity(
     tableName = "card_table",
@@ -22,7 +23,8 @@ data class CardEntity(
     @ColumnInfo(name = "back") val back: String
 )
 
-// fun Card.toDatabase() = CardEntity(
-//     front = front,
-//     back = back
-// )
+fun Card.toEntityModel() = CardEntity(
+    deckId = deckId,
+    front = front,
+    back = back
+)

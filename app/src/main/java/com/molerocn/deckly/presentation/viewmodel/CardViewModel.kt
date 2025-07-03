@@ -1,7 +1,7 @@
 package com.molerocn.deckly.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.molerocn.deckly.domain.MediaPlayerUseCase
+import com.molerocn.deckly.domain.usecase.MediaPlayerUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

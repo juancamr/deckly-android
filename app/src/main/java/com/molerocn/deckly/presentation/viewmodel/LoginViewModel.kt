@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.molerocn.deckly.core.AuthHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
-import com.molerocn.deckly.domain.SignInWithGoogleUseCase
+import com.molerocn.deckly.domain.usecase.SignInWithGoogleUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.molerocn.deckly.domain
+package com.molerocn.deckly.domain.usecase
 
 import com.molerocn.deckly.data.repository.CardRepository
 import com.molerocn.deckly.domain.model.Card

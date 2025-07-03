@@ -11,15 +11,37 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_cardFragment"
-            app:destination="@id/cardFragment" />
+            android:id="@+id/action_homeFragment_to_deckDetailFragment"
+            app:destination="@id/deckDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addCardFragment"
+            app:destination="@id/addCardFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/deckDetailFragment"
+        android:name="com.molerocn.deckly.presentation.view.screen.main.DeckDetailFragment"
+        android:label="fragment_deck_detail"
+        tools:layout="@layout/fragment_deck_detail">
+
+        <argument
+            android:name="deckId"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_deckDetailFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/cardFragment"
         android:name="com.molerocn.deckly.presentation.view.screen.main.CardFragment"
         android:label="fragment_card"
         tools:layout="@layout/fragment_card" />
+    <fragment
+        android:id="@+id/addCardFragment"
+        android:name="com.molerocn.deckly.presentation.view.screen.main.AddCardFragment"
+        android:label="fragment_card_add"
+        tools:layout="@layout/fragment_card_add" />
 
 </navigation>

@@ -4,28 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:transitionName="shared_element"
     tools:context=".presentation.view.screen.main.HomeFragment">
 
     <TextView
-        android:id="@+id/tvNombreUsuario"
+        android:id="@+id/emptyLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="80dp"
-        android:text="Hola, Nombre usuario xd"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnStudyCard"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Estudiar"
+        android:text="No hay decks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:visibility="gone"
+        tools:listitem="@layout/item_deck" />
+
+    <!-- Loading indicator with a container -->
+    <com.google.android.material.loadingindicator.LoadingIndicator
+        android:id="@+id/loader"
+        style="@style/Widget.Material3.LoadingIndicator.Contained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:indicatorSize="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addDeck"
+        style="?attr/floatingActionButtonMediumStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:contentDescription="Agregar"
+        android:src="@drawable/ic_add_folder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:maxImageSize="40dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addCard"
+        style="?attr/floatingActionButtonMediumStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:contentDescription="Agregar"
+        android:src="@drawable/ic_add_note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="40dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

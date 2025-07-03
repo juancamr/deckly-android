@@ -14,8 +14,11 @@ interface DeckDao {
     @Query("SELECT * FROM deck_table")
     suspend fun getDecks(): List<DeckEntity>
 
+    @Query("SELECT * FROM deck_table WHERE id = :deckId")
+    suspend fun getDeck(deckId: Int): DeckEntity
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDeck(deck: DeckEntity)
+    suspend fun insertDeck(deck: DeckEntity): Long
 
     @Delete
     suspend fun deleteDecks(vararg decks: DeckEntity)

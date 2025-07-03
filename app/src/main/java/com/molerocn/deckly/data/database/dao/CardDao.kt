@@ -15,7 +15,7 @@ interface CardDao {
     suspend fun getCardsByDeck(deckId: Int): List<CardEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCard(card: CardEntity)
+    suspend fun insertCard(card: CardEntity): Long
 
     @Delete
     suspend fun deleteCards(vararg cards: CardEntity)

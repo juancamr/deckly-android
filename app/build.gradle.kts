@@ -17,6 +17,7 @@ plugins {
     alias(libs.plugins.google.ksp)
     kotlin("plugin.serialization") version "2.0.21"
     // alias(libs.plugins.google.services)
+    alias(libs.plugins.androidx.navigation.safeargs.kotlin)
 }
 
 android {
@@ -77,8 +78,11 @@ dependencies { // siguiendo las instrucciones https://developer.android.com/buil
     implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.kotlinx.coroutines)
 
+    // network
     implementation(libs.retrofit)
     implementation(libs.gson.converter)
+
+    // inyeccion de dependencias
     implementation(libs.google.hilt)
     ksp(libs.google.hilt.compiler)
 
@@ -94,6 +98,9 @@ dependencies { // siguiendo las instrucciones https://developer.android.com/buil
     // setup google sign siguiendo la guia https://developer.android.com/identity/sign-in/credential-manager-siwg
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.auth)
+
+    // navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    // implementation(libs.androidx.navigation.safeargs.gradle)
 }
